@@ -15,12 +15,20 @@ const PORT = process.env.PORT || 8080;
 const HOST = "localhost";
 
 // Conexión a la base de datos MongoDB
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/adoptme')
+const mongoUri = process.env.MONGODB_URI;
+
+if (!mongoUri) {
+  console.error("Falta la variable de entorno MONGODB_URI en el archivo .env");
+  process.exit(1);
+}
+
+mongoose.connect(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
-    console.log("Database connected successfully");
+    console.log("Conexión a la base de datos exitosa");
   })
   .catch((err) => {
-    console.error("Error connecting to the database", err);
+    console.error("Error conectando a la base de datos", err);
+    process.exit(1);
   });
 
 app.use(express.json());

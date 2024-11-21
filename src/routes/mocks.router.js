@@ -20,11 +20,9 @@ router.get('/mockingusers', async (req, res) => {
     }
 });
 
-// Endpoint POST para generar usuarios y mascotas
 router.post('/generateData', async (req, res) => {
-    const { usersCount, petsCount } = req.body; // Cambié 'users' y 'pets' por 'usersCount' y 'petsCount'
+    const { usersCount, petsCount } = req.body;
 
-    // Validación para asegurar que los parámetros estén presentes
     if (!usersCount || !petsCount) {
         return res.status(400).json({
             status: 'error',
@@ -33,13 +31,10 @@ router.post('/generateData', async (req, res) => {
     }
 
     try {
-        // Generar usuarios y mascotas
         const userData = generateUsers(usersCount);
         const petData = generatePets(petsCount);
-
-        // Insertar en la base de datos
-        await UserModel.insertMany(userData); // Insertar usuarios
-        await PetModel.insertMany(petData);   // Insertar mascotas
+        await UserModel.insertMany(userData); 
+        await PetModel.insertMany(petData);  
 
         res.status(201).json({
             status: 'success',
@@ -53,4 +48,6 @@ router.post('/generateData', async (req, res) => {
         });
     }
 });
+
+
 export default router;
