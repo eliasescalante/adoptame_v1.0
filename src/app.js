@@ -41,3 +41,5 @@ app.use('/api/sessions', sessionsRouter);
 app.use('/api/mocks', mocksRouter);
 
 app.listen(PORT, () => console.log(`Servidor en funcionamiento en http://${HOST}:${PORT}`));
+
+export default app;

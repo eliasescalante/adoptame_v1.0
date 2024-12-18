@@ -29,6 +29,14 @@ Se añadió el archivo `mocks.router.js` que incluye los siguientes endpoints:
 
 ## Implementacion de la entrega final
 
+1. **`npm test`** 
+   Se agregó la carpeta test donde se agrego los test funcionales al endpoitn del router "adoption.router.js".
+2. **`Dockerfile`**
+   Se agrego el uso de contenedores al proyecto agregando la imagen del proyecto
+3. **`.dockerignore`**
+   Se agrego el archivo para ignorar archivos innecesarios al momento de crear la imagen
+4. **`Dockerhub`**
+   Se subio la imagen al repositorio de dockerhub. Link del repositorio: 
 
 ---
 
