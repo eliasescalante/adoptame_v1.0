@@ -36,7 +36,7 @@ Se añadió el archivo `mocks.router.js` que incluye los siguientes endpoints:
 3. **`.dockerignore`**
    Se agrego el archivo para ignorar archivos innecesarios al momento de crear la imagen
 4. **`Dockerhub`**
-   Se subio la imagen al repositorio de dockerhub. Link del repositorio: 
+   Se subio la imagen al repositorio de dockerhub. Link del repositorio: https://hub.docker.com/r/eliasescalante/adoptame2
 
 ---
 
